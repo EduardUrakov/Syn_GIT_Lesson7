@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Загадки</h2>
+    <h3 class="heading">Зимой и летом одним цветом</h3>
+    <input class="answer" type="text">
+    <button class="btn">Проверить</button>
+    <p class="info"></p>
+    <script>
+        const userAnswer = document.querySelector('.answer');
+        const btnEl = document.querySelector('.btn');
+        const infoEl = document.querySelector('.info');
+
+        btnEl.addEventListener("click", function () {
+            if (userAnswer.value.toLowerCase() == "елка" || userAnswer.value.toLowerCase() == "ёлка") {
+                infoEl.textContent = 'Угадал молодец!'
+                btnEl.style.display = 'none'
+                userAnswer.setAttribute('disabled', 'disabled')
+            } else {
+                infoEl.textContent = 'Не угадал, давай попробуем еще раз!'
+                userAnswer.value = ''
+            }
+        });
+
+    </script>
+</body>
+
+</html>
